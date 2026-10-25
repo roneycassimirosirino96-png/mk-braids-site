@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#571b2b">
+  <title>MK Braids | Tranças e Agendamentos</title>
+  <style>
+    :root {
+      --vinho: #571b2b;
+      --vinho-escuro: #35101b;
+      --dourado: #c6a15b;
+      --creme: #fff8ee;
+      --texto: #30242a;
+      --branco: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--vinho);
+      color: var(--branco);
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--dourado); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    nav a:hover { color: var(--dourado); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--vinho), var(--vinho-escuro));
+      color: var(--branco);
+      padding: 75px 7%;
+      text-align: center;
+    }
+
+    .hero .destaque {
+      color: var(--dourado);
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 16px auto 25px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--dourado);
+      color: var(--vinho-escuro);
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .botao:hover { filter: brightness(.95); }
+
+    .secao { padding: 55px 6%; }
+
+    .titulo { text-align: center; margin-bottom: 30px; }
+
+    .titulo span {
+      color: var(--vinho);
+      font-weight: bold;
+    }
+
+    .titulo h2 {
+      font-size: 2rem;
+      margin: 5px 0;
+    }
+
+    .servicos {
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .servico {
+      background: var(--branco);
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px #35101b12;
+      border: 1px solid #eadfda;
+    }
+
+    .servico img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      background: #eadfda;
+    }
+
+    .servico-conteudo { padding: 18px; }
+
+    .servico h3 {
+      margin: 0 0 8px;
+      color: var(--vinho);
+    }
+
+    .preco {
+      color: var(--vinho);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .aviso-preco {
+      text-align: center;
+      font-size: .9rem;
+      margin-top: 24px;
+    }
+
+    .agenda {
+      background: #f3e8df;
+    }
+
+    form {
+      max-width: 650px;
+      margin: auto;
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 13px;
+      box-shadow: 0 4px 16px #35101b12;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 14px 0 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cdbfc1;
+      border-radius: 7px;
+      font: inherit;
+      background: white;
+    }
+
+    textarea { resize: vertical; }
+
+    form .botao {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    #mensagem {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .contato { text-align: center; }
+
+    .contato a {
+      color: var(--vinho);
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--vinho-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; gap: 12px; }
+      .hero { padding: 55px 6%; }
+      .secao { padding: 40px 5%; }
+      form { padding: 18px; }
+    }
+   .logo-mk {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo-mk img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.logo-mk h1 {
+  margin-top: 12px;
+}</style>
+</head>
+<body>
+    <div class="logo-mk">
+  <img src="imagens/logo-mk.jpg" alt="Logo MK Braids">
+  <h1>MK Braids</h1>
+</div>
+
+  <header>
+    <a class="logo" href="#inicio">MK <span>BRAIDS</span></a>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Penteados</a>
+      <a href="#agendamento">Agendar horário</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <span class="destaque">Beleza em cada detalhe</span>
+      <h1>Seu estilo.<br>Suas tranças.</h1>
+      <p>Encontre o penteado que combina com você. Conheça nossos estilos e solicite seu horário na MK Braids.</p>
+      <a class="botao" href="#servicos">Conhecer os penteados</a>
+    </section>
+
+    <section class="secao" id="servicos">
+      <div class="titulo">
+        <span>Encontre seu estilo</span>
+        <h2>Nossos penteados</h2>
+        <p>Escolha um modelo para iniciar seu agendamento.</p>
+      </div>
+
+      <div class="servicos" id="lista-penteados"></div>
+
+      <p class="aviso-preco">
+        Os valores são iniciais e podem variar conforme o tamanho,
+        o modelo e os detalhes escolhidos. Confirme o preço no atendimento.
+      </p>
+    </section>
+
+    <section class="secao agenda" id="agendamento">
+      <div class="titulo">
+        <span>Vamos marcar?</span>
+        <h2>Solicite seu horário</h2>
+        <p>Preencha os dados. O pedido será preparado para envio pelo WhatsApp.</p>
+      </div>
+
+      <form id="formulario">
+        <label for="nome">Seu nome</label>
+        <input id="nome" name="nome" required placeholder="Digite seu nome">
+
+        <label for="telefone">Seu WhatsApp</label>
+        <input id="telefone" name="telefone" type="tel" required
+          placeholder="(11) 99999-9999">
+
+        <label for="servico">Penteado desejado</label>
+        <select id="servico" name="servico" required>
+          <option value="">Escolha um penteado</option>
+        </select>
+
+        <label for="data">Data desejada</label>
+        <input id="data" name="data" type="date" required>
+
+        <label for="horario">Horário desejado</label>
+        <select id="horario" name="horario" required>
+          <option value="">Escolha um horário</option>
+          <option>08:00</option>
+          <option>09:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+        </select>
+
+        <label for="detalhes">Detalhes do penteado (opcional)</label>
+        <textarea id="detalhes" name="detalhes" rows="3"
+          placeholder="Ex.: tamanho, cor, desenho ou referência"></textarea>
+
+        <button class="botao" type="submit">Solicitar pelo WhatsApp</button>
+        <p id="mensagem" role="status"></p>
+      </form>
+    </section>
+
+    <section class="secao contato" id="contato">
+      <div class="titulo">
+        <span>Fale com a gente</span>
+        <h2>Conheça a MK Braids</h2>
+        <p>Acompanhe os modelos e novidades no nosso Instagram.</p>
+      </div>
+      <a class="botao" href="https://www.instagram.com/MK_BRAIDS_OFICIAL/"
+         target="_blank" rel="noopener noreferrer">
+        Ver modelos no Instagram
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>MK Braids — Tranças feitas com estilo.</p>
+  </footer>
+
+  <script>
+    // 1. COLOQUE AQUI O WHATSAPP DA PROFISSIONAL.
+    // Use o código do Brasil + DDD + número, somente números.
+    // Exemplo fictício: 5511988887777
+    const WHATSAPP_DA_PROFISSIONAL = "5575999791777";
+
+    // 2. ADICIONE NOVOS PENTEADOS NESTA LISTA.
+    // Para preço a combinar, use preco: null.
+    // As imagens abaixo são ilustrativas e podem ser trocadas depois.
+    const penteados = [
+      {
+        nome: "Nagô simples",
+        preco: 50,
+        imagem: "imagens/nago-simples.jpg"
+      },
+      {
+        nome: "Nagô desenhada",
+        preco: 70,
+        imagem: "imagens/nago-desenhada.jpg"
+      },
+      {
+        nome: "Box Braids",
+        preco: 240,
+        imagem: "imagens/box-braids.jpg"
+      },
+      {
+        nome: "Goddess Braids",
+        preco: 260,
+        imagem: "imagens/goddess-braids.jpg"
+      },
+      {
+        nome: "Boho Braids",
+        preco: 280,
+        imagem: "imagens/boho-braids.jpg"
+      },
+      {
+        nome: "Fulani Braids",
+        preco: 250,
+        imagem: "imagens/fulani-braids.jpg"
+      },
+      {
+        nome: "Boxeadora",
+        preco: 150,
+        imagem: "imagens/boxeadora.jpg"
+      },
+      {
+        nome: "Entrelace",
+        preco: 260,
+        imagem: "imagens/entrelace.jpg"
+      },
+      {
+        nome: "Nagô masculino",
+        preco: null,
+        imagem: "imagens/nago-masculino.jpg"
+      }
+    ];
+
+    const lista = document.getElementById("lista-penteados");
+    const seletor = document.getElementById("servico");
+
+    function mostrarPenteados() {
+      penteados.forEach((penteado, indice) => {
+        const artigo = document.createElement("article");
+        artigo.className = "servico";
+
+        const imagem = document.createElement("img");
+        imagem.src = penteado.imagem;
+        imagem.alt = "Imagem ilustrativa de " + penteado.nome;
+        imagem.loading = "lazy";
+        imagem.onerror = () => {
+          imagem.style.display = "none";
+        };
+
+        const conteudo = document.createElement("div");
+        conteudo.className = "servico-conteudo";
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = penteado.nome;
+
+        const preco = document.createElement("p");
+        preco.className = "preco";
+        preco.textContent = penteado.preco === null
+          ? "Preço a combinar"
+          : "A partir de R$ " + penteado.preco.toFixed(2).replace(".", ",");
+
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.className = "botao";
+        botao.textContent = "Escolher penteado";
+        botao.addEventListener("click", () => {
+          seletor.value = penteado.nome;
+          document.getElementById("agendamento").scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+
+        conteudo.append(titulo, preco, botao);
+        artigo.append(imagem, conteudo);
+        lista.appendChild(artigo);
+
+        const opcao = document.createElement("option");
+        opcao.value = penteado.nome;
+        opcao.textContent = penteado.nome;
+        seletor.appendChild(opcao);
+      });
+    }
+
+    mostrarPenteados();
+
+    // Impede selecionar datas anteriores a hoje.
+    const campoData = document.getElementById("data");
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoje.getDate()).padStart(2, "0");
+    campoData.min = `${ano}-${mes}-${dia}`;
+
+    
+document.getElementById("formulario").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const mensagem = document.getElementById("mensagem");
+  const botaoEnviar = this.querySelector('button[type="submit"]');
+
+  const nome = document.getElementById("nome").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const servico = seletor.value;
+  const data = campoData.value;
+  const horario = document.getElementById("horario").value;
+  const detalhes = document.getElementById("detalhes").value.trim();
+
+  if (!nome || !telefone || !servico || !data || !horario) {
+    mensagem.textContent = "Preencha todos os campos obrigatórios.";
+    return;
+  }
+
+  const dataHora = new Date(`${data}T${horario}:00`);
+
+  if (Number.isNaN(dataHora.getTime())) {
+    mensagem.textContent = "Confira a data e o horário escolhidos.";
+    return;
+  }
+
+  botaoEnviar.disabled = true;
+  mensagem.textContent = "Enviando sua solicitação...";
+
+  try {
+    const { data: resultado, error } = await supabaseClient.rpc(
+      "solicitar_agendamento",
+      {
+        p_nome: nome,
+        p_telefone: telefone,
+        p_servico: servico,
+        p_data_hora: dataHora.toISOString(),
+        p_observacoes: detalhes || null
+      }
+    );
+
+    if (error) {
+      if (error.message.includes("Esse horário não está disponível")) {
+        mensagem.textContent =
+          "Esse horário já foi solicitado ou está ocupado. Escolha outro.";
+      } else {
+        console.error("Erro ao salvar agendamento:", error);
+        mensagem.textContent =
+          "Não foi possível enviar o pedido. Tente novamente.";
+      }
+      return;
+    }
+
+    mensagem.textContent =
+      "Solicitação enviada! Aguarde sua confirmação de horário pelo WhatsApp.";
+
+    this.reset();
+    seletor.value = "";
+    campoData.min = campoData.min;
+  } catch (erro) {
+    console.error("Erro inesperado:", erro);
+    mensagem.textContent =
+      "Ocorreu um erro de conexão. Tente novamente.";
+  } finally {
+    botaoEnviar.disabled = false;
+  }
+});
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+<script>
+  const SUPABASE_URL = "https://ztvxrdlrhfqnxzxvxaoe.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_01p7kjCninkwVr9X0qebfg_LT2r-EYV";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#571b2b">
+  <title>MK Braids — Painel</title>
+
+  <style>
+
+/* ========================================
+   MK BRAIDS — PAINEL ADMINISTRATIVO
+   Estilo luxo: preto e dourado
+======================================== */
+
+:root {
+  --fundo: #0b0b0b;
+  --superficie: #151515;
+  --superficie-clara: #1d1b17;
+  --dourado: #d4af65;
+  --dourado-claro: #ecd49a;
+  --dourado-escuro: #80632f;
+  --texto: #f5f0e6;
+  --texto-suave: #bdb5a6;
+  --borda: #40331f;
+  --verde: #79c99a;
+  --vermelho: #e58c8c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--fundo);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px 18px 48px;
+  background:
+    radial-gradient(ellipse at top, #211b10 0%, transparent 48%),
+    var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+h1 {
+  margin: 12px 0;
+  color: var(--dourado);
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+h2 {
+  margin: 28px 0 16px;
+  color: var(--dourado-claro);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 0 0 14px;
+  color: var(--dourado-claro);
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+
+p {
+  color: var(--texto-suave);
+  line-height: 1.7;
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+  color: var(--dourado-claro);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 46px;
+  margin: 7px 0 15px;
+  padding: 12px 14px;
+  border: 1px solid #4b402c;
+  border-radius: 10px;
+  background: #171717;
+  color: var(--texto);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 3px #d4af651c;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #898276;
+}
+
+button,
+.botao {
+  min-height: 42px;
+  margin: 5px 6px 5px 0;
+  padding: 11px 17px;
+  border: 1px solid var(--dourado);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ecd49a, #bd9447);
+  color: #17120a;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+button:hover,
+.botao:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+.botao:focus-visible {
+  outline: 2px solid var(--dourado-claro);
+  outline-offset: 3px;
+}
+
+button:disabled,
+.botao:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#tela-login {
+  width: 100%;
+  max-width: 430px;
+  margin: 7vh auto;
+  padding: 30px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #191919, #101010);
+  box-shadow: 0 18px 55px #0008;
+}
+
+#tela-login h1 {
+  margin-top: 0;
+}
+
+#tela-login p {
+  text-align: center;
+}
+
+#tela-painel {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#tela-painel > h1 {
+  margin: 8px 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+}
+
+#tela-painel > p {
+  color: var(--texto-suave);
+}
+
+#botao-sair {
+  float: right;
+  border: 1px solid var(--dourado-escuro);
+  background: transparent;
+  color: var(--dourado-claro);
+}
+
+#botao-sair:hover {
+  background: #d4af6517;
+}
+
+.cartao {
+  position: relative;
+  margin: 15px 0;
+  padding: 22px;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--dourado);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #191919, #111111);
+  box-shadow: 0 9px 25px #0004;
+}
+
+.cartao h3 {
+  margin: 0 0 13px;
+}
+
+.cartao p {
+  margin: 8px 0;
+  color: #d4cec2;
+}
+
+.cartao button {
+  margin-top: 12px;
+}
+
+#area-bloqueio {
+  margin-top: 25px;
+  border-left-color: var(--dourado-claro);
+}
+
+#lista-agendamentos {
+  margin-top: 22px;
+}
+
+.horario-passado {
+  opacity: 0.62;
+  border-left-color: #777;
+  background: #121212;
+}
+
+.horario-passado h3::after {
+  content: " • HORÁRIO PASSADO";
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+
+#tela-painel strong {
+  color: var(--dourado-claro);
+}
+
+#tela-painel hr {
+  margin: 25px 0;
+  border: 0;
+  border-top: 1px solid var(--borda);
+}
+
+#mensagem-login,
+#mensagem-bloqueio {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 18px 12px 32px;
+  }
+
+  #tela-login {
+    margin: 28px auto;
+    padding: 22px 18px;
+  }
+
+  #tela-painel > h1 {
+    padding-top: 55px;
+    font-size: 27px;
+  }
+
+  #botao-sair {
+    position: absolute;
+    margin-top: -4px;
+  }
+
+  .cartao {
+    padding: 17px;
+    border-radius: 12px;
+  }
+
+  .cartao button {
+    width: 100%;
+    min-height: 44px;
+    margin: 7px 0 0;
+  }
+
+  #area-bloqueio button {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+/* INDICADORES DO PAINEL */
+.resumo-agendamentos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 25px 0;
+}
+
+.indicador {
+  position: relative;
+  padding: 22px 18px;
+  overflow: hidden;
+  border: 1px solid #40331f;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #1d1b17, #101010);
+  box-shadow: 0 8px 22px #0005;
+}
+
+.indicador::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #d4af65;
+}
+
+.indicador span {
+  display: block;
+  margin-bottom: 10px;
+  color: #bdb5a6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.indicador strong {
+  display: block;
+  color: #ecd49a;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .resumo-agendamentos {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .indicador {
+    padding: 17px;
+  }
+
+  .indicador strong {
+    font-size: 27px;
+  }
+}
+
+/* CARTÕES DOS AGENDAMENTOS */
+#lista-agendamentos > section {
+  margin-top: 28px;
+}
+
+#lista-agendamentos > section > h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--borda);
+}
+
+#lista-agendamentos .cartao {
+  border-left: 4px solid var(--dourado);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+#lista-agendamentos .cartao:hover {
+  border-left-color: var(--dourado-claro);
+  transform: translateY(-2px);
+}
+
+#lista-agendamentos .cartao h3 {
+  color: var(--dourado-claro);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#lista-agendamentos .cartao p {
+  overflow-wrap: anywhere;
+}
+
+#lista-agendamentos .cartao p:nth-of-type(2) {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: #d4af6512;
+  color: var(--dourado-claro);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#lista-agendamentos .cartao button {
+  min-width: 110px;
+}
+
+#lista-agendamentos .cartao button + button {
+  border-color: #8c4545;
+  background: #291515;
+  color: #f0b1b1;
+}
+
+#lista-agendamentos .cartao button:disabled {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  #lista-agendamentos .cartao button {
+    width: 100%;
+    margin: 6px 0;
+  }
+}
+
+/* CABEÇALHO MK BRAIDS */
+body > header {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  padding: 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid #80632f;
+  background: linear-gradient(
+    180deg,
+    #211b10 0%,
+    #0b0b0b 100%
+  );
+  border-radius: 16px 16px 0 0;
+}
+
+body > header h1 {
+  margin: 0;
+  color: #ecd49a;
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px #d4af6525;
+}
+
+body > header p {
+  margin: 8px 0 0;
+  color: #bdb5a6;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  body > header {
+    margin-bottom: 20px;
+    padding: 20px 12px;
+  }
+
+  body > header h1 {
+    letter-spacing: 3px;
+  }
+
+  body > header p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+/* BUSCA E FILTROS */
+.busca-agendamentos {
+  width: 100%;
+  margin: 18px 0 12px;
+}
+
+.busca-agendamentos input {
+  min-height: 50px;
+  margin-bottom: 10px;
+  border: 1px solid #5b4828;
+  border-radius: 12px;
+  background: #111;
+}
+
+.filtros-agendamentos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 25px;
+}
+
+.filtros-agendamentos .filtro {
+  margin: 0;
+  border: 1px solid #5b4828;
+  background: #171717;
+  color: #d4af65;
+}
+
+.filtros-agendamentos .filtro.ativo {
+  border-color: #ecd49a;
+  background: linear-gradient(135deg, #ecd49a, #bd9447);
+  color: #17120a;
+  box-shadow: 0 3px 12px #d4af6520;
+}
+
+.filtros-agendamentos .filtro:hover {
+  border-color: #ecd49a;
+}
+
+@media (max-width: 600px) {
+  .filtros-agendamentos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filtros-agendamentos .filtro {
+    width: 100%;
+    margin: 0;
+  }
+
+  .busca-agendamentos input {
+    font-size: 16px;
+  }
+}
+
+/* ÁREA DE BLOQUEIO DE HORÁRIOS */
+#area-bloqueio {
+  margin-top: 32px;
+  padding: 25px;
+  border: 1px solid #5b4828;
+  border-top: 2px solid #d4af65;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1b1915, #101010);
+  box-shadow: 0 10px 28px #0004;
+}
+
+#area-bloqueio h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  color: #ecd49a;
+}
+
+#area-bloqueio h2::before {
+  content: "◆";
+  color: #d4af65;
+  font-size: 15px;
+}
+
+#area-bloqueio > p {
+  margin-bottom: 20px;
+}
+
+#area-bloqueio label {
+  margin-top: 16px;
+}
+
+#area-bloqueio input {
+  border-color: #51432c;
+}
+
+#area-bloqueio #botao-bloquear {
+  width: 100%;
+  min-height: 48px;
+  margin: 10px 0;
+}
+
+#mensagem-bloqueio {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  #area-bloqueio {
+    padding: 18px;
+  }
+}
+
+/* AJUSTES FINAIS PARA CELULAR */
+@media (max-width: 600px) {
+  body {
+    padding: 12px 10px 28px;
+    font-size: 15px;
+  }
+
+  #tela-painel {
+    width: 100%;
+  }
+
+  #tela-painel > h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+
+  #tela-painel > h2 {
+    font-size: 19px;
+  }
+
+  .resumo-agendamentos {
+    gap: 9px;
+    margin: 18px 0;
+  }
+
+  .indicador {
+    padding: 15px;
+  }
+
+  .filtros-agendamentos {
+    gap: 8px;
+  }
+
+  .filtros-agendamentos .filtro {
+    min-height: 46px;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  #lista-agendamentos .cartao {
+    padding: 16px;
+    margin: 12px 0;
+  }
+
+  #lista-agendamentos .cartao h3 {
+    font-size: 18px;
+  }
+
+  #lista-agendamentos .cartao button {
+    min-height: 46px;
+    font-size: 15px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  #botao-sair {
+    min-height: 42px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>MK Braids</h1>
+    <p>Painel de agendamentos</p>
+  </header>
+
+  
+
+<main>
+  <section class="cartao" id="tela-login">
+    <h2>Entrar no painel</h2>
+    <p>Use o e-mail e a senha da profissional.</p>
+
+    <form id="formulario-login">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" required
+        autocomplete="username" placeholder="E-mail cadastrado">
+
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" required
+        autocomplete="current-password" placeholder="Sua senha">
+
+      <button class="botao" type="submit">Entrar</button>
+      <p id="mensagem-login" role="status"></p>
+    </form>
+  </section>
+
+  <section class="cartao" id="tela-painel" hidden>
+    <h2>Agendamentos</h2>
+    <p>Bem-vinda ao painel da MK Braids!</p>
+    <button class="botao" id="botao-sair" type="button">
+      Sair
+    </button>
+
+<div class="resumo-agendamentos">
+  <div class="indicador">
+    <span>Pendentes</span>
+    <strong id="total-pendentes">0</strong>
+  </div>
+
+  <div class="indicador">
+    <span>Aprovados</span>
+    <strong id="total-aprovados">0</strong>
+  </div>
+
+  <div class="indicador">
+    <span>Total</span>
+    <strong id="total-agendamentos">0</strong>
+  </div>
+</div>
+
+<div class="filtros-agendamentos">
+
+<div class="busca-agendamentos">
+  <input
+    type="text"
+    id="buscar-cliente"
+    placeholder="Buscar por nome ou telefone..."
+    autocomplete="off"
+  >
+</div>
+
+  <button class="botao filtro ativo" data-filtro="todos" type="button">Todos</button>
+  <button class="botao filtro" data-filtro="pendente" type="button">Pendentes</button>
+  <button class="botao filtro" data-filtro="aprovado" type="button">Aprovados</button>
+  <button class="botao filtro" data-filtro="recusado" type="button">Recusados</button>
+</div>
+
+<section class="cartao" id="area-bloqueio">
+  <h2>Bloquear horário</h2>
+  <p>Impeça novos agendamentos em um horário específico.</p>
+
+  <label for="data-bloqueio">Data e horário</label>
+  <input
+    type="datetime-local"
+    id="data-bloqueio"
+    required
+  >
+
+  <label for="motivo-bloqueio">Motivo (opcional)</label>
+  <input
+    type="text"
+    id="motivo-bloqueio"
+    placeholder="Ex.: compromisso pessoal"
+  >
+
+  <button class="botao" id="botao-bloquear" type="button">
+    Bloquear horário
+  </button>
+
+  <p id="mensagem-bloqueio"></p>
+</section>
+
+      <div id="lista-agendamentos"></div>
+  </section>
+</main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL =  "https://ztvxrdlrhfqnxzxvxaoe.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_01p7kjCninkwVr9X0qebfg_LT2r-EYV";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+</script>
+
+<script>
+  document.getElementById("formulario-login").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const mensagem = document.getElementById("mensagem-login");
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+
+    mensagem.textContent = "Entrando...";
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: senha
+    });
+
+    if (error) {
+      mensagem.textContent = "Não foi possível entrar. Confira o e-mail e a senha.";
+      return;
+    }
+
+   const { data: usuarioAdmin, error: erroAdmin } = await supabaseClient
+  .from("admin_users")
+  .select("user_id")
+  .eq("user_id", data.user.id)
+  .maybeSingle();
+
+if (erroAdmin || !usuarioAdmin) {
+  await supabaseClient.auth.signOut();
+  mensagem.textContent = "Esta conta não tem permissão para acessar o painel.";
+  return;
+}
+
+mensagem.textContent = "Login realizado! Acesso autorizado.";
+document.getElementById("tela-login").hidden = true;
+document.getElementById("tela-painel").hidden = false;
+carregarAgendamentos();
+  });
+</script>
+
+<script>
+async function carregarAgendamentos() {
+  const lista = document.getElementById("lista-agendamentos");
+
+  lista.textContent = "Carregando agendamentos...";
+
+  const { data: agendamentos, error } = await supabaseClient
+    .from("agendamentos")
+    .select("id, nome_cliente, telefone, servico, data_hora, observacoes, status")
+    .order("data_hora", { ascending: true });
+
+  if (error) {
+    lista.textContent = "Não foi possível carregar os agendamentos.";
+    console.error(error);
+    return;
+  }
+
+document.getElementById("total-pendentes").textContent =
+  agendamentos.filter(item => item.status === "pendente").length;
+
+document.getElementById("total-aprovados").textContent =
+  agendamentos.filter(item => item.status === "aprovado").length;
+
+document.getElementById("total-agendamentos").textContent =
+  agendamentos.length;
+
+
+  
+lista.replaceChildren();
+
+const grupos = [
+  { status: "pendente", titulo: "Pendentes" },
+  { status: "aprovado", titulo: "Aprovados" },
+  { status: "recusado", titulo: "Recusados" }
+];
+
+if (!agendamentos || agendamentos.length === 0) {
+  lista.textContent = "Nenhum agendamento encontrado.";
+  return;
+}
+
+grupos.forEach(function(grupo) {
+  const secao = document.createElement("section");
+  const tituloSecao = document.createElement("h2");
+  const conteudo = document.createElement("div");
+
+  tituloSecao.textContent = grupo.titulo;
+  secao.appendChild(tituloSecao);
+
+  const itens = agendamentos.filter(function(item) {
+    return item.status === grupo.status;
+  });
+
+  if (itens.length === 0) {
+    const vazio = document.createElement("p");
+    vazio.textContent = "Nenhum agendamento aqui.";
+    conteudo.appendChild(vazio);
+  }
+
+  conteudo.id = "grupo-" + grupo.status;
+  secao.appendChild(conteudo);
+  lista.appendChild(secao);
+});
+
+
+  agendamentos.forEach(function(agendamento) {
+    const cartao = document.createElement("article");
+    cartao.dataset.telefone = agendamento.telefone || "";
+    cartao.dataset.dataHora = agendamento.data_hora;
+    const titulo = document.createElement("h3");
+    const detalhes = document.createElement("p");
+    const situacao = document.createElement("p");
+
+    titulo.textContent = agendamento.nome_cliente;
+    const horarioPassou = new Date(agendamento.data_hora) < new Date();
+
+if (horarioPassou) {
+  cartao.classList.add("horario-passado");
+}
+    detalhes.textContent =
+      agendamento.servico + " • " +
+      new Date(agendamento.data_hora).toLocaleString("pt-BR");
+
+    situacao.textContent = "Status: " + agendamento.status;
+
+   
+const botoes = document.createElement("div");
+
+const botaoAprovar = document.createElement("button");
+botaoAprovar.textContent = "Aprovar";
+botaoAprovar.className = "botao";
+
+const botaoRecusar = document.createElement("button");
+botaoRecusar.textContent = "Recusar";
+botaoRecusar.className = "botao";
+
+botaoRecusar.addEventListener("click", async function() {
+  const confirmar = confirm(
+    "Tem certeza que deseja recusar este agendamento?"
+  );
+
+  if (!confirmar) return;
+
+  botaoRecusar.disabled = true;
+  botaoRecusar.textContent = "Salvando...";
+
+  const { error } = await supabaseClient
+    .from("agendamentos")
+    .update({ status: "recusado" })
+    .eq("id", agendamento.id);
+
+  if (error) {
+    alert("Não foi possível recusar. Tente novamente.");
+    console.error(error);
+    botaoRecusar.disabled = false;
+    botaoRecusar.textContent = "Recusar";
+    return;
+  }
+
+  alert("Agendamento recusado!");
+
+  const telefone = String(agendamento.telefone || "").replace(/\D/g, "");
+  const numeroWhatsApp = telefone.startsWith("55")
+    ? telefone
+    : "55" + telefone;
+
+  const mensagem = `Olá, ${agendamento.nome_cliente}. Agradecemos por escolher a MK Braids. Infelizmente, não poderemos confirmar o agendamento solicitado. Entre em contato conosco para verificar outras opções de horário. 💕`;
+
+  if (telefone) {
+    window.open(
+      "https://wa.me/" + numeroWhatsApp +
+      "?text=" + encodeURIComponent(mensagem),
+      "_blank"
+    );
+  }
+
+  await carregarAgendamentos();
+});
+
+
+botaoAprovar.addEventListener("click", async function() {
+  botaoAprovar.disabled = true;
+  botaoAprovar.textContent = "Salvando...";
+
+  const { error } = await supabaseClient
+    .from("agendamentos")
+    .update({ status: "aprovado" })
+    .eq("id", agendamento.id);
+
+  if (error) {
+    alert("Não foi possível aprovar. Tente novamente.");
+    console.error(error);
+    botaoAprovar.disabled = false;
+    botaoAprovar.textContent = "Aprovar";
+    return;
+  }
+
+  const telefone = String(agendamento.telefone || "").replace(/\D/g, "");
+  const numeroWhatsApp = telefone.startsWith("55")
+    ? telefone
+    : "55" + telefone;
+
+  const data = new Date(agendamento.data_hora);
+  const dataFormatada = data.toLocaleDateString("pt-BR");
+  const horaFormatada = data.toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  const mensagem = `Olá, ${agendamento.nome_cliente}! 💕 Seu agendamento de ${agendamento.servico}, para ${dataFormatada} às ${horaFormatada}, foi aprovado pela MK Braids! Agradecemos pela preferência! ✨`;
+
+  alert("Agendamento aprovado!");
+
+  if (telefone) {
+    window.open(
+      "https://wa.me/" + numeroWhatsApp +
+      "?text=" + encodeURIComponent(mensagem),
+      "_blank"
+    );
+  }
+
+  await carregarAgendamentos();
+});
+
+botoes.append(botaoAprovar, botaoRecusar);
+cartao.append(titulo, detalhes, situacao, botoes);
+cartao.classList.add("cartao");
+document
+  .getElementById("grupo-" + agendamento.status)
+  .appendChild(cartao);
+
+  });
+}
+document.getElementById("botao-sair").addEventListener("click", async function() {
+  const { error } = await supabaseClient.auth.signOut();
+
+  if (error) {
+    alert("Não foi possível sair. Tente novamente.");
+    console.error(error);
+    return;
+  }
+
+  document.getElementById("tela-painel").hidden = true;
+  document.getElementById("tela-login").hidden = false;
+  document.getElementById("formulario-login").reset();
+  document.getElementById("mensagem-login").textContent = "Você saiu da sua conta.";
+});
+
+document.querySelectorAll(".filtro").forEach(function(botao) {
+  botao.addEventListener("click", function() {
+    const filtroEscolhido = botao.dataset.filtro;
+
+    document.querySelectorAll(".filtro").forEach(function(outroBotao) {
+      outroBotao.classList.remove("ativo");
+    });
+
+    botao.classList.add("ativo");
+
+    document.querySelectorAll("#lista-agendamentos > section").forEach(function(secao) {
+      const titulo = secao.querySelector("h2").textContent.trim();
+
+      const mostrar =
+        filtroEscolhido === "todos" ||
+        (filtroEscolhido === "pendente" && titulo === "Pendentes") ||
+        (filtroEscolhido === "aprovado" && titulo === "Aprovados") ||
+        (filtroEscolhido === "recusado" && titulo === "Recusados");
+
+      secao.hidden = !mostrar;
+    });
+  });
+});
+
+document.getElementById("buscar-cliente").addEventListener("input", function() {
+  const busca = this.value.toLowerCase().trim();
+
+  document.querySelectorAll("#lista-agendamentos .cartao").forEach(function(cartao) {
+    const texto = cartao.textContent.toLowerCase();
+    const telefone = (cartao.dataset.telefone || "").toLowerCase();
+
+    cartao.hidden = !texto.includes(busca) && !telefone.includes(busca);
+  });
+});
+
+document.getElementById("botao-bloquear").addEventListener("click", async function() {
+  const dataHora = document.getElementById("data-bloqueio").value;
+  const motivo = document.getElementById("motivo-bloqueio").value.trim();
+
+  const mensagem = document.getElementById("mensagem-bloqueio");
+  const botao = document.getElementById("botao-bloquear");
+
+  if (!dataHora) {
+    mensagem.textContent = "Escolha a data e o horário.";
+    return;
+  }
+
+  const dataConvertida = new Date(dataHora);
+
+  if (dataConvertida <= new Date()) {
+    mensagem.textContent = "Escolha uma data e um horário futuros.";
+    return;
+  }
+
+  botao.disabled = true;
+  mensagem.textContent = "Salvando bloqueio...";
+
+  const { error } = await supabaseClient
+    .from("horarios_bloqueados")
+    .insert({
+      data_hora: dataConvertida.toISOString(),
+      motivo: motivo || null
+    });
+
+  botao.disabled = false;
+
+  if (error) {
+    console.error(error);
+    mensagem.textContent = "Não foi possível salvar. Confira as permissões.";
+    return;
+  }
+
+  mensagem.textContent = "Horário bloqueado com sucesso!";
+  document.getElementById("data-bloqueio").value = "";
+  document.getElementById("motivo-bloqueio").value = "";
+});
+</script>
+
+
+
+</body>
+</html>
