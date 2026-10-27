@@ -549,4 +549,14 @@ document.getElementById("formulario").addEventListener("submit", async function(
 </script>
 
 </body>
+  
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/mk-braids-site/service-worker.js")
+      .catch((error) => console.error("Erro ao registrar o service worker:", error));
+  });
+}
+</script>
+
 </html>
