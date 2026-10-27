@@ -652,6 +652,7 @@ body > header p {
   <header>
     <h1>MK Braids</h1>
     <p>Painel de agendamentos</p>
+    <link rel="manifest" href="/mk-braids-site/app/manifest.json">
   </header>
 
   
@@ -1085,6 +1086,13 @@ document.getElementById("botao-bloquear").addEventListener("click", async functi
 </script>
 
 
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/mk-braids-site/app/service-worker.js")
+      .catch((error) => console.error("Erro ao registrar o service worker do painel:", error));
+  });
+}
+</script>
 </body>
 </html>
