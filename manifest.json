@@ -1,0 +1,21 @@
+
+{
+  "id": "/mk-braids-site/",
+  "name": "MK BRAIDS",
+  "short_name": "MK BRAIDS",
+  "description": "Agende suas tranças na MK BRAIDS",
+  "start_url": "/mk-braids-site/",
+  "scope": "/mk-braids-site/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7b2d4f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/mk-braids-site/imagens/logo-mk.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
